@@ -1,0 +1,8 @@
+{
+  "name": "blood-bank-management-system",
+  "version": "1.0.0",
+  "description": "Blood Bank Management System",
+  "scripts": {
+    "test": "node test.js"
+  }
+}

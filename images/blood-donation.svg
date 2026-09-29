@@ -1,0 +1,16 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="480" rx="40" fill="#FFF5F5"/>
+  <circle cx="470" cy="150" r="88" fill="#FFDADA"/>
+  <rect x="140" y="140" width="260" height="220" rx="36" fill="white" stroke="#F0C7C7" stroke-width="4"/>
+  <rect x="190" y="204" width="160" height="84" rx="20" fill="#C00000"/>
+  <path d="M270 184C270 168.536 282.536 156 298 156H314C329.464 156 342 168.536 342 184V212H270V184Z" fill="#8F0000"/>
+  <rect x="244" y="266" width="52" height="8" rx="4" fill="#FFCACA"/>
+  <rect x="244" y="282" width="80" height="8" rx="4" fill="#FFCACA"/>
+  <rect x="244" y="298" width="66" height="8" rx="4" fill="#FFCACA"/>
+  <path d="M382 250C382 224.595 402.595 204 428 204H438C463.405 204 484 224.595 484 250V260H382V250Z" fill="#C00000"/>
+  <rect x="372" y="260" width="130" height="84" rx="18" fill="white" stroke="#E8B2B2" stroke-width="3"/>
+  <path d="M426 284C438.15 284 448 274.15 448 262C448 249.85 438.15 240 426 240C413.85 240 404 249.85 404 262C404 274.15 413.85 284 426 284Z" fill="#C00000"/>
+  <path d="M420 254L426 262L434 254" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M176 360C220 316 264 302 320 320" stroke="#C00000" stroke-width="10" stroke-linecap="round"/>
+  <path d="M420 360C456 332 470 318 486 300" stroke="#C00000" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Donor | Blood Donor Management System</title>
+    <meta name="description" content="Register as a blood donor in the offline blood donor management system" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="register">
+    <header class="topbar">
+      <div class="container nav-shell">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">♥</span>
+          <span>Blood Donor System</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="register.html">Register</a>
+          <a class="nav-link" href="search.html">Search</a>
+          <a class="nav-link" href="request.html">Request</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section">
+        <div class="container auth-layout">
+          <div class="page-intro">
+            <p class="eyebrow">Join the Campaign</p>
+            <h2>Register as a donor and become part of a life-saving network.</h2>
+            <p>Your contribution can support emergency care teams instantly and confidently.</p>
+            <div class="intro-card">
+              <div class="intro-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l2.8 6.2L21 9.1l-5 4.7 1.3 6.6L12 17.4 6.7 20.4 8 13.8 3 9.1l6.2-.9L12 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Verified and trusted</h3>
+                <p>Each registration is designed to connect donors with urgent medical support quickly.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="donorForm" class="glass-card form-card">
+            <!-- HTML5 form validation and audio feedback implemented here -->
+            <div class="form-grid">
+              <div class="floating-field">
+                <label for="fullName">Full Name</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">👤</span>
+                  <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name" autocomplete="name" maxlength="60" />
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="age">Age</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">🎂</span>
+                  <input type="number" id="age" name="age" min="18" max="100" required placeholder="18+" />
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="gender">Gender</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">⚧</span>
+                  <select id="gender" name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="bloodGroup">Blood Group</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">🩸</span>
+                  <input type="text" id="bloodGroup" name="bloodGroup" list="bloodGroups" required placeholder="Select blood group" autocomplete="off" pattern="(A|B|AB|O)[+-]" />
+                  <datalist id="bloodGroups">
+                    <option value="A+"></option>
+                    <option value="A-"></option>
+                    <option value="B+"></option>
+                    <option value="B-"></option>
+                    <option value="AB+"></option>
+                    <option value="AB-"></option>
+                    <option value="O+"></option>
+                    <option value="O-"></option>
+                  </datalist>
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="email">Email</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">✉️</span>
+                  <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email" />
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="phone">Phone Number</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">📞</span>
+                  <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit phone" autocomplete="tel" />
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="city">City</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">📍</span>
+                  <input type="text" id="city" name="city" list="cities" required placeholder="Enter your city" autocomplete="address-level2" />
+                  <datalist id="cities">
+                    <option value="Mumbai"></option>
+                    <option value="Delhi"></option>
+                    <option value="Bangalore"></option>
+                    <option value="Chennai"></option>
+                    <option value="Kolkata"></option>
+                    <option value="Hyderabad"></option>
+                    <option value="Pune"></option>
+                    <option value="Ahmedabad"></option>
+                  </datalist>
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="availability">Availability</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">🗓️</span>
+                  <select id="availability" name="availability" required>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                  </select>
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="password">Password</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">🔒</span>
+                  <input type="password" id="password" name="password" required minlength="6" placeholder="Minimum 6 characters" autocomplete="new-password" />
+                </div>
+              </div>
+              <div class="floating-field">
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="input-icon-wrap">
+                  <span class="input-icon">🔐</span>
+                  <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Re-enter password" autocomplete="new-password" />
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary submit-btn animated-btn" type="submit">Register</button>
+            <div id="formMessage" class="message" aria-live="polite"></div>
+            <audio id="registerSound" controls preload="none" class="sr-only">
+              <source src="audio/notify.wav" type="audio/wav" />
+            </audio>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Blood Donor System</h3>
+          <p>Copyright © 2026 Blood Donor Management System. All rights reserved.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="search.html">Find Donor</a></li>
+            <li><a href="request.html">Emergency Request</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>support@bloodsystem.org</li>
+            <li>+91 98765 43210</li>
+            <li>Ready to help 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

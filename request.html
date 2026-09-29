@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Request | Blood Donor Management System</title>
+    <meta name="description" content="Submit an emergency blood request and view matching donors" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="request">
+    <header class="topbar">
+      <div class="container nav-shell">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">♥</span>
+          <span>Blood Donor System</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="register.html">Register</a>
+          <a class="nav-link" href="search.html">Search</a>
+          <a class="nav-link" href="request.html">Request</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section">
+        <div class="container form-shell">
+          <div class="emergency-banner">
+            <div class="emergency-banner__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2L3 7v5c0 5.5 3.7 10.3 9 12 5.3-1.7 9-6.5 9-12V7l-9-5z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="eyebrow">Emergency Support</p>
+              <h2>Request blood quickly and reliably.</h2>
+              <p>Submit a request and instantly view matching available donors in your area.</p>
+            </div>
+          </div>
+
+          <form id="requestForm" class="glass-card form-card">
+            <!-- Geolocation and audio notification implemented here -->
+            <div class="form-grid">
+              <div class="floating-field">
+                <label for="patientName">Patient Name</label>
+                <input type="text" id="patientName" name="patientName" required placeholder="Enter patient name" autocomplete="name" />
+              </div>
+              <div class="floating-field">
+                <label for="requiredBloodGroup">Required Blood Group</label>
+                <input type="text" id="requiredBloodGroup" name="requiredBloodGroup" list="bloodGroupsRequest" required placeholder="Select blood group" autocomplete="off" pattern="(A|B|AB|O)[+-]" />
+                <datalist id="bloodGroupsRequest">
+                  <option value="A+"></option>
+                  <option value="A-"></option>
+                  <option value="B+"></option>
+                  <option value="B-"></option>
+                  <option value="AB+"></option>
+                  <option value="AB-"></option>
+                  <option value="O+"></option>
+                  <option value="O-"></option>
+                </datalist>
+              </div>
+              <div class="floating-field">
+                <label for="hospitalName">Hospital Name</label>
+                <input type="text" id="hospitalName" name="hospitalName" required placeholder="Hospital name" autocomplete="organization" />
+              </div>
+              <div class="floating-field">
+                <label for="hospitalLocation">Hospital Location</label>
+                <input type="text" id="hospitalLocation" name="hospitalLocation" list="citiesRequest" required placeholder="Hospital city" autocomplete="address-level2" />
+                <datalist id="citiesRequest">
+                  <option value="Mumbai"></option>
+                  <option value="Delhi"></option>
+                  <option value="Bangalore"></option>
+                  <option value="Chennai"></option>
+                  <option value="Kolkata"></option>
+                  <option value="Hyderabad"></option>
+                  <option value="Pune"></option>
+                  <option value="Ahmedabad"></option>
+                </datalist>
+              </div>
+              <div class="floating-field">
+                <label for="unitsRequired">Units Required</label>
+                <input type="number" id="unitsRequired" name="unitsRequired" min="1" max="20" step="1" required placeholder="Example: 2" />
+              </div>
+              <div class="floating-field">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit phone" autocomplete="tel" />
+              </div>
+              <div class="floating-field">
+                <label for="requiredDate">Required Date</label>
+                <input type="date" id="requiredDate" name="requiredDate" required />
+              </div>
+              <div class="floating-field full-width">
+                <label for="additionalNotes">Additional Notes</label>
+                <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Add notes or urgency details"></textarea>
+              </div>
+              <div class="floating-field full-width">
+                <label>Location Coordinates</label>
+                <div class="coord-row">
+                  <input type="text" id="latitude" name="latitude" placeholder="Latitude" readonly />
+                  <input type="text" id="longitude" name="longitude" placeholder="Longitude" readonly />
+                  <button class="btn btn-secondary location-btn" type="button" onclick="detectLocation()">Detect My Location</button>
+                </div>
+              </div>
+            </div>
+            <label class="checkbox-row">
+              <input type="checkbox" id="confirmRequest" name="confirmRequest" required />
+              <span>I confirm the above information</span>
+            </label>
+
+            <button class="btn btn-primary submit-btn animated-btn" type="submit">Submit Request</button>
+            <div id="requestMessage" class="message" aria-live="polite"></div>
+            <audio id="requestSound" controls preload="none" class="sr-only">
+              <source src="audio/notify.wav" type="audio/wav" />
+            </audio>
+          </form>
+
+          <div class="section-heading compact top-space">
+            <p class="eyebrow">Matching Donors</p>
+            <h3>Available donors for your blood group</h3>
+          </div>
+          <div id="matchResults" class="card-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Blood Donor System</h3>
+          <p>Copyright © 2026 Blood Donor Management System. All rights reserved.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="search.html">Find Donor</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>support@bloodsystem.org</li>
+            <li>+91 98765 43210</li>
+            <li>Ready to help 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

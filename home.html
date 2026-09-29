@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donor Management System</title>
+    <meta name="description" content="Professional blood donor management system built with HTML5, CSS3, and JavaScript" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <div class="container nav-shell">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">♥</span>
+          <span>Blood Donor System</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="register.html">Register</a>
+          <a class="nav-link" href="search.html">Search</a>
+          <a class="nav-link" href="request.html">Request</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- UI ENHANCEMENT: Premium healthcare hero section with stronger visual hierarchy -->
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Trusted Care Network</p>
+            <h1>Save lives with a premium blood donor experience.</h1>
+            <p class="hero-text">Connect donors, streamline emergency requests, and save lives through a polished healthcare platform built for rapid support and compassionate care.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="register.html">Become a Donor</a>
+              <a class="btn btn-secondary" href="search.html">Search Donor</a>
+            </div>
+            <div class="hero-badges">
+              <div class="hero-badge-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l2.8 6.2L21 9.1l-5 4.7 1.3 6.6L12 17.4 6.7 20.4 8 13.8 3 9.1l6.2-.9L12 2z"/>
+                </svg>
+                <span>24/7 emergency readiness</span>
+              </div>
+              <div class="hero-badge-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3c-2.8 0-5 2.2-5 5 0 3.8 5 8 5 8s5-4.2 5-8c0-2.8-2.2-5-5-5z"/>
+                </svg>
+                <span>Verified donor matching</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-visual-card">
+              <div class="hero-visual-top">
+                <span class="pill pill-soft">Healthcare-ready platform</span>
+              </div>
+              <img src="images/blood-donation.svg" alt="Healthcare blood donation illustration" />
+              <canvas id="bloodCanvas" class="hero-canvas" width="260" height="140"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Animated healthcare statistics section -->
+      <section class="stats-section">
+        <div class="container stats-grid">
+          <article class="stat-card">
+            <span class="stat-number" data-target="1200">0</span>
+            <p>Lives supported</p>
+          </article>
+          <article class="stat-card">
+            <span class="stat-number" data-target="350">0</span>
+            <p>Active donors</p>
+          </article>
+          <article class="stat-card">
+            <span class="stat-number" data-target="98">0</span>
+            <p>Response score</p>
+          </article>
+          <article class="stat-card">
+            <span class="stat-number" data-target="24">0</span>
+            <p>Hours of support</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Why donate cards with modern healthcare styling -->
+      <section class="info-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Why Donate Blood?</p>
+            <h2>Every donation can bring hope to families in need.</h2>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21s-7-4.7-7-10a4.5 4.5 0 0 1 8-2.2A4.5 4.5 0 0 1 19 11c0 5.3-7 10-7 10z"/>
+                </svg>
+              </div>
+              <h3>Save Up to 3 Lives</h3>
+              <p>A single blood donation can support multiple patients during emergencies and surgeries.</p>
+            </article>
+            <article class="info-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3l7 4v5c0 4.3-2.7 8.2-7 9-4.3-.8-7-4.7-7-9V7l7-4z"/>
+                </svg>
+              </div>
+              <h3>Free Health Check-Up</h3>
+              <p>Each donation includes a basic screening, helping donors stay informed about their health.</p>
+            </article>
+            <article class="info-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 6h16v12H4z"/><path d="M8 10h8v2H8z"/><path d="M8 14h5v2H8z"/>
+                </svg>
+              </div>
+              <h3>Support Emergency Patients</h3>
+              <p>Rapid donor matching improves response times during trauma, childbirth, and critical care scenarios.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Blood donation process cards -->
+      <section class="process-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Donation Process</p>
+            <h2>A simple and safe process from registration to care.</h2>
+          </div>
+          <div class="process-grid">
+            <article class="process-card">
+              <span class="step-badge">01</span>
+              <h3>Register</h3>
+              <p>Create your donor profile with your details and preferred availability.</p>
+            </article>
+            <article class="process-card">
+              <span class="step-badge">02</span>
+              <h3>Match</h3>
+              <p>Emergency requests are linked to the most suitable available donor profiles.</p>
+            </article>
+            <article class="process-card">
+              <span class="step-badge">03</span>
+              <h3>Donate</h3>
+              <p>Visit a certified centre and help save lives with a confident, guided donation experience.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Benefits and compatibility overview -->
+      <section class="benefits-section">
+        <div class="container benefits-grid">
+          <article class="benefit-card highlight">
+            <p class="eyebrow">Benefits</p>
+            <h3>Why donors trust this platform</h3>
+            <ul>
+              <li>Secure donor verification and matching</li>
+              <li>Fast support for emergency requests</li>
+              <li>Health-conscious donor guidance</li>
+            </ul>
+          </article>
+          <article class="benefit-card">
+            <p class="eyebrow">Compatibility</p>
+            <h3>Blood type matching</h3>
+            <div class="compat-list">
+              <span>O- universal donor</span>
+              <span>AB+ universal recipient</span>
+              <span>Positive and negative variants supported</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Frequent questions -->
+      <section class="faq-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Frequently Asked Questions</p>
+            <h2>Everything you need to know before donating.</h2>
+          </div>
+          <div class="faq-list">
+            <details open>
+              <summary>Who can donate blood?</summary>
+              <p>Healthy adults aged 18 and above with valid donor information can participate.</p>
+            </details>
+            <details>
+              <summary>Is the process safe?</summary>
+              <p>Yes. Donations are handled under trusted healthcare guidelines and verified support protocols.</p>
+            </details>
+            <details>
+              <summary>How quickly can requests be matched?</summary>
+              <p>Matches are created instantly based on the availability and blood group of registered donors.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Blood donation awareness video -->
+      <section class="video-section">
+        <div class="container video-shell">
+          <div class="section-heading compact">
+            <p class="eyebrow">Blood Donation Awareness</p>
+            <h2>Watch How Blood Donation Saves Lives</h2>
+            <p>See a short awareness video that highlights the importance of donating blood and supporting life-saving care.</p>
+          </div>
+          <div class="video-frame-wrap">
+            <video controls preload="metadata" width="100%" poster="images/blood-donation.svg">
+              <source src="videos/blood-donation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI ENHANCEMENT: Strong call to action -->
+      <section class="cta-section">
+        <div class="container cta-card">
+          <div>
+            <p class="eyebrow">Join the mission</p>
+            <h2>Be the reason a family receives urgent care.</h2>
+          </div>
+          <a class="btn btn-primary" href="register.html">Register Now</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Blood Donor System</h3>
+          <p>Copyright © 2026 Blood Donor Management System. All rights reserved.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="register.html">Register Donor</a></li>
+            <li><a href="search.html">Find Donor</a></li>
+            <li><a href="request.html">Emergency Request</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>support@bloodsystem.org</li>
+            <li>+91 98765 43210</li>
+            <li>Ready to help 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

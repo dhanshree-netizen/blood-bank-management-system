@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Donor | Blood Donor Management System</title>
+    <meta name="description" content="Search for available blood donors by blood group or city" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="search">
+    <header class="topbar">
+      <div class="container nav-shell">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">♥</span>
+          <span>Blood Donor System</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="register.html">Register</a>
+          <a class="nav-link" href="search.html">Search</a>
+          <a class="nav-link" href="request.html">Request</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section">
+        <div class="container">
+          <div class="section-heading compact">
+            <p class="eyebrow">Find Donors</p>
+            <h2>Locate a suitable donor with a polished, healthcare-grade search experience.</h2>
+          </div>
+
+          <form id="searchForm" class="glass-card search-panel">
+            <div class="search-controls">
+              <div class="floating-field">
+                <label for="searchText">Search Name</label>
+                <input type="search" id="searchText" name="searchText" placeholder="Enter donor name" autocomplete="off" />
+              </div>
+              <div class="floating-field">
+                <label for="bloodGroupFilter">Blood Group</label>
+                <select id="bloodGroupFilter" name="bloodGroupFilter">
+                  <option value="">All Groups</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+              <div class="floating-field">
+                <label for="cityFilter">City</label>
+                <select id="cityFilter" name="cityFilter">
+                  <option value="">All Cities</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Kolkata">Kolkata</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Pune">Pune</option>
+                  <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit">Find Donor</button>
+            </div>
+            <div id="searchMessage" class="message" aria-live="polite"></div>
+          </form>
+
+          <div id="donorResults" class="card-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Blood Donor System</h3>
+          <p>Copyright © 2026 Blood Donor Management System. All rights reserved.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="request.html">Emergency Request</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>support@bloodsystem.org</li>
+            <li>+91 98765 43210</li>
+            <li>Ready to help 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

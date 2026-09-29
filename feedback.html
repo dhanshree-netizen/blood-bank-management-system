@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback | Blood Donor Management System</title>
+    <meta name="description" content="Share your feedback about the blood donor system" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="feedback">
+    <header class="topbar">
+      <div class="container nav-shell">
+        <a class="brand" href="home.html">
+          <span class="brand-mark">♥</span>
+          <span>Blood Donor System</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="register.html">Register</a>
+          <a class="nav-link" href="search.html">Search</a>
+          <a class="nav-link" href="request.html">Request</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section">
+        <div class="container form-shell">
+          <div class="section-heading compact">
+            <p class="eyebrow">Your Voice Matters</p>
+            <h2>Share feedback and help us elevate every donation experience.</h2>
+            <p>Your suggestions help us improve emergency blood support for the community.</p>
+          </div>
+
+          <div class="feedback-layout">
+            <form id="feedbackForm" class="glass-card form-card">
+              <!-- Dynamic feedback updates implemented here -->
+              <div class="form-grid single-column">
+                <div class="floating-field">
+                  <label for="feedbackName">Name</label>
+                  <input type="text" id="feedbackName" name="feedbackName" required placeholder="Your name" autocomplete="name" maxlength="60" />
+                </div>
+                <div class="floating-field">
+                  <label for="feedbackEmail">Email</label>
+                  <input type="email" id="feedbackEmail" name="feedbackEmail" required placeholder="your@email.com" autocomplete="email" />
+                </div>
+                <div class="floating-field">
+                  <label>How would you rate the experience?</label>
+                  <div class="rating-stars" aria-label="Star rating">
+                    <button type="button" class="star-btn" data-value="1" aria-label="1 star">★</button>
+                    <button type="button" class="star-btn" data-value="2" aria-label="2 stars">★</button>
+                    <button type="button" class="star-btn" data-value="3" aria-label="3 stars">★</button>
+                    <button type="button" class="star-btn" data-value="4" aria-label="4 stars">★</button>
+                    <button type="button" class="star-btn" data-value="5" aria-label="5 stars">★</button>
+                  </div>
+                  <select id="rating" name="rating" required class="sr-only">
+                    <option value="">Select rating</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="3">3 - Good</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="1">1 - Poor</option>
+                  </select>
+                </div>
+                <div class="floating-field">
+                  <label for="referenceUrl">Reference URL</label>
+                  <input type="url" id="referenceUrl" name="referenceUrl" placeholder="https://example.com" autocomplete="url" />
+                </div>
+                <div class="floating-field">
+                  <label for="comments">Comments</label>
+                  <textarea id="comments" name="comments" rows="5" required placeholder="Tell us about your experience" minlength="10" maxlength="300"></textarea>
+                </div>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" id="terms" name="terms" required />
+                <span>I agree to the terms and conditions.</span>
+              </label>
+
+              <button class="btn btn-primary submit-btn animated-btn" type="submit">Submit Feedback</button>
+              <div id="feedbackMessage" class="message" aria-live="polite"></div>
+              <div id="feedbackSummary" class="summary-card"></div>
+              <audio id="feedbackSound" controls preload="none" class="sr-only">
+                <source src="audio/notify.wav" type="audio/wav" />
+              </audio>
+            </form>
+
+            <aside class="feedback-side">
+              <article class="testimonial-card">
+                <h3>What donors say</h3>
+                <p>“The experience feels calm, supportive and beautifully organised.”</p>
+              </article>
+              <article class="testimonial-card">
+                <h3>Fast communication</h3>
+                <p>“Emergency requests and donor connections are simple and reassuring.”</p>
+              </article>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Blood Donor System</h3>
+          <p>Copyright © 2026 Blood Donor Management System. All rights reserved.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="search.html">Find Donor</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>support@bloodsystem.org</li>
+            <li>+91 98765 43210</li>
+            <li>Ready to help 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
